@@ -32,6 +32,15 @@ module.exports = class ProductServices {
         }
     };
 
+    async getProduct(id) {
+        try {
+            let result = await Product.findById(id);
+            return result;
+        } catch (error) {
+            return error.message;
+        }
+    };
+    
     
 
     // update Product by ID

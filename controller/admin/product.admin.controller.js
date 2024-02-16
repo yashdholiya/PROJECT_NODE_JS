@@ -3,7 +3,7 @@ const productService = new ProductServices();
 
 exports.addProduct = async (req, res) => {
     try {
-        let product = await productService.getSpeProduct(req.body.productName, { isDelete: false });
+        let product = await productService.addProduct(req.body.productName, { isDelete: false });
         console.log("Old Product is => ",product);
         if (product) {
             return res.json({ message: "Product is already exist.Please try again" });
@@ -23,7 +23,7 @@ exports.addProduct = async (req, res) => {
 
 exports.getAllProduct = async (req, res) => {
     try {
-        let Product = await productService.getAllProduct({ isDelete: false });
+        let Product = await productService.getAllProducts({ isDelete: false });
         if (!Product) {
             return res.json({ message: "Product is not found..Please try again" });
         };
@@ -37,8 +37,8 @@ exports.getAllProduct = async (req, res) => {
 
 exports.getSpeProduct = async (req, res) => {
     try {
-        let Product = await productService.getProductById(req.body.ProductID);
-        // console.log(req.body.ProductID);
+        let Product = await productService.getProduct(req.body.ProductID);
+        // console.log(req.body.`ProductID`);
         // console.log(Product);
         if (!Product) {
             return res.json({ message: "Product is not found.. Please try again" });
@@ -52,7 +52,7 @@ exports.getSpeProduct = async (req, res) => {
 
 exports.updateProduct = async (req, res) => {
     try {
-        let Product = await productService.getProductById(req.body.ProductID);
+        let Product = await productService.updateProduct(req.body.ProductID);
         // console.log(req.body.ProductID);
         if (!Product) {
             return res.json({ message: "Product is not found..Please try again" });

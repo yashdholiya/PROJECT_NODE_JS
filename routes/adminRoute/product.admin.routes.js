@@ -6,9 +6,9 @@ const { deleteProduct, addProduct, getAllProduct, getSpeProduct, updateProduct }
 
 productRoutes.post('/addproduct', upload.single('productImage'), addProduct);
 productRoutes.delete('/deleteproduct',upload.none(), adminverifyToken, deleteProduct);
-productRoutes.get('/getAllProducts',upload.none(), adminverifyToken, getAllProduct);
-productRoutes.get('/getSpeProduct',upload.none(), adminverifyToken, getSpeProduct);
-productRoutes.put('/updateProduct',upload.none(), adminverifyToken, updateProduct);
+productRoutes.get('/getAllProducts',upload.none(), getAllProduct);
+productRoutes.get('/getProduct',upload.none(), getSpeProduct);
+productRoutes.put('/updateProduct',upload.none(), updateProduct);
 
 
     

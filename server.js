@@ -23,12 +23,16 @@ server.get('/',(req,res)=>
 const userRoutes = require('./routes/userRoute/user.routes');
 const AdminRoutes = require('./routes/adminRoute/admin.routes');
 const productRoutes =require('./routes/adminRoute/product.admin.routes');
+const productuserRoutes =require('./routes/userRoute/product.user.routes');
+const foveriteroutes = require('./routes/userRoute/foverite.user.routes');
 
 // const productroutes= require("./routes/fproduct.routes");
 
 server.use('/api/user',userRoutes);
 server.use('/api/Admin',AdminRoutes);
 server.use('/api/product',productRoutes);
+server.use('/api/userproduct',productuserRoutes);
+server.use('/api/foveritecart',foveriteroutes);
 // server.use('/api/fproduct',productroutes);
 
 
