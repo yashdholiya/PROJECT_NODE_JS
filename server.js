@@ -25,6 +25,7 @@ const AdminRoutes = require('./routes/adminRoute/admin.routes');
 const productRoutes =require('./routes/adminRoute/product.admin.routes');
 const productuserRoutes =require('./routes/userRoute/product.user.routes');
 const foveriteroutes = require('./routes/userRoute/foverite.user.routes');
+const cartrouters = require('./routes/userRoute/cart.user.routes');
 
 // const productroutes= require("./routes/fproduct.routes");
 
@@ -33,6 +34,7 @@ server.use('/api/Admin',AdminRoutes);
 server.use('/api/product',productRoutes);
 server.use('/api/userproduct',productuserRoutes);
 server.use('/api/foveritecart',foveriteroutes);
+server.use('/api/cart',cartrouters);
 // server.use('/api/fproduct',productroutes);
 
 
