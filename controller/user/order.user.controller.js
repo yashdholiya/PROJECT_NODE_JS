@@ -4,33 +4,7 @@ const CartService = require('../../services/user/cart.user.service');
 const orderService = new OrderService();
 const cartService = new CartService();
 
-// exports.addNewOrder = async (req, res) => {
-//     try {
-//         const carts = await cartService.getallcart(req.query, req.user);
 
-//         const orderItems = carts.map((item) => ({
-//             cartItem: item.cartItem._id,
-//             quantity: item.quantity,
-//             price: item.cartItem.price
-//         }));
-
-//         const totalAmount = orderItems.reduce((total, item) => (total += item.quantity * item.price), 0);
-
-//         const newOrder = {
-//             user: req.user._id,
-//             items: orderItems,
-//             totalAmount: totalAmount
-//         };
-
-//         const order = await orderService.addNewOrder(newOrder);
-//         await cartService.updatecart(req.user._id, { isDelete: true });
-
-//         res.json({ order, message: 'Order Success....' });
-//     } catch (err) {
-//         console.error(err);
-//         res.json({ message: 'Internal Server Error' });
-//     }
-// };
 
 exports.addNewOrder = async (req, res) => {
     try {
