@@ -11,9 +11,8 @@ exports.addNewOrder = async (req, res) => {
         const carts = await cartService.getallcart(req.query, req.user);
 
         const orderItems = carts.map((item) => {
-            const quantity = item.quantity || 0; // Set default value if quantity is undefined
-            const price = item.cartItem.price || 0; // Set default value if price is undefined
-
+            const quantity = item.quantity || 0; 
+            const price = item.cartItem.price || 0;
             return {
                 cartItem: item.cartItem._id,
                 quantity: quantity,
